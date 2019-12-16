@@ -11,6 +11,8 @@ body {
   justify-content: center;
   align-items: center;
 
+  padding-left: 3rem;
+  padding-right: 3rem;
   background-color: #EDF2F7;
 }
 
