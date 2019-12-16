@@ -8,13 +8,30 @@
         <title>Dad Jokes</title>
     </head>
     <body>
+        <h1 class="joke">Joke Goes Here</h1>
+        <button class="get-joke">Get Joke</button>
         
         <script>
             "use strict";
 
-            async function getDadJoke() {
+            const jokePara = document.querySelector(".joke");
+            const jokeBtn = document.querySelector(".get-joke");
 
+            async function getDadJoke() {
+                const url = "https://icanhazdadjoke.com/";
+
+                try {
+                    const response = await fetch(url, { headers: { Accept: "application/json" } });
+                    const data = await response.json();
+
+                    jokePara.textContent = data.joke;
+                } catch(err) {
+                    console.error(err);
+                }
             }
+
+            jokeBtn.addEventListener("click", getDadJoke);
+
         </script>
     </body>
 </html>
