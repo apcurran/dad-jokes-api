@@ -4,4 +4,65 @@
   box-sizing: border-box;
 }
 
-/*# sourceMappingURL=style.css.map */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #EDF2F7;
+}
+
+body,
+button {
+  font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
+  letter-spacing: .01em;
+}
+
+.joke {
+  margin-bottom: 2rem;
+  font-weight: 400;
+ 
+}
+
+.btn-wrapper {
+  padding: .25rem;
+}
+
+.joke-btn {
+  padding: .75rem 1.75rem;
+  border: none;
+  border-radius: 500px;
+  background-color: #434190;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.15rem;
+  outline: none;
+}
+
+.joke-btn:focus {
+  box-shadow: 0 1px 18px #2b6cb0;
+}
+
+.btn-wrapper:hover .joke-btn {
+  animation: bounce-in 400ms ease-in-out forwards;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  80% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

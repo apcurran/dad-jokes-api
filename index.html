@@ -8,29 +8,32 @@
         <title>Dad Jokes</title>
     </head>
     <body>
-        <h1 class="joke">Joke Goes Here</h1>
-        <button class="get-joke">Get Joke</button>
+        <h1 class="joke">Brace yourself for dad jokes...</h1>
+        <div class="btn-wrapper">
+            <button class="joke-btn">Get Joke</button>
+        </div>
         
         <script>
             "use strict";
 
             const jokePara = document.querySelector(".joke");
-            const jokeBtn = document.querySelector(".get-joke");
+            const jokeBtn = document.querySelector(".joke-btn");
 
-            async function getDadJoke() {
+            async function insertDadJoke() {
                 const url = "https://icanhazdadjoke.com/";
 
                 try {
                     const response = await fetch(url, { headers: { Accept: "application/json" } });
                     const data = await response.json();
+                    const joke = data.joke;
 
-                    jokePara.textContent = data.joke;
+                    jokePara.textContent = joke;
                 } catch(err) {
                     console.error(err);
                 }
             }
 
-            jokeBtn.addEventListener("click", getDadJoke);
+            jokeBtn.addEventListener("click", insertDadJoke);
 
         </script>
     </body>
